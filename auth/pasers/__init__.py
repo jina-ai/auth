@@ -3,6 +3,7 @@ def get_main_parser():
     :return: the parser
     """
     from .base import set_base_parser
+    from .token import set_token_parser
     from .helper import _chf
 
     # create the top-level parser
@@ -25,10 +26,12 @@ def get_main_parser():
         formatter_class=_chf,
     )
 
-    sp.add_parser(
-        'token',
-        description='Operations on Personal Access Token',
-        formatter_class=_chf,
+    set_token_parser(
+        sp.add_parser(
+            'token',
+            description='Operations on Personal Access Token',
+            formatter_class=_chf,
+        )
     )
 
     return parser
