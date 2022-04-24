@@ -1,6 +1,6 @@
 import pytest
 from argparse import ArgumentParser
-from auth.pasers import get_main_parser
+from auth.parsers import get_main_parser
 
 @pytest.fixture
 def parser() -> 'ArgumentParser':

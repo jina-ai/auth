@@ -4,7 +4,7 @@ def set_token_parser(parent_parser: 'ArgumentParser' = None):
     if not parent_parser:
         raise RuntimeError('Unreachable')
 
-    from .helper import _chf
+    from auth.parsers.helper import _chf
     
     token_parser = parent_parser.add_subparsers(
         dest='operation',

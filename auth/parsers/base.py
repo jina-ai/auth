@@ -2,8 +2,8 @@ import argparse
 
 
 def set_base_parser():
-    from .. import __version__
-    from .helper import _chf, colored
+    from auth import __version__
+    from auth.parsers.helper import _chf, colored
 
     parser = argparse.ArgumentParser(
         description=f'Jina auth (v{colored(__version__, "green")}) helps you login in to Jina Ecosystem.',
