@@ -23,6 +23,13 @@ try:
 except FileNotFoundError:
     _long_description = ''
 
+# package requirements
+try:
+    with open('requirements.txt', 'r') as f:
+        _install_requires = f.readlines()
+except FileNotFoundError:
+    _install_requires = []
+
 setup(
     name=pkg_name,
     packages=find_packages(),
@@ -38,7 +45,7 @@ setup(
     long_description_content_type='text/markdown',
     zip_safe=False,
     setup_requires=['setuptools>=18.0', 'wheel'],
-    install_requires=[],
+    install_requires=_install_requires,
     extras_require={
         'test': [
             'pytest',

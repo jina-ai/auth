@@ -1,9 +1,6 @@
-from argparse import Namespace
-
-
 def login(args):
-    print('login')
-
+    import hubble
+    hubble.login()
 
 def logout(args):
     print('logout')

@@ -1,0 +1,1 @@
+jina-hubble-sdk @ git+https://github.com/jina-ai/hubble-client-python@v0.1.3#egg=jina-hubble-sdk
