@@ -3,8 +3,8 @@ def get_main_parser():
     :return: the parser
     """
     from .base import set_base_parser
-    from .token import set_token_parser
     from .helper import _chf
+    from .token import set_token_parser
 
     # create the top-level parser
     parser = set_base_parser()

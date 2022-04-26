@@ -1,5 +1,5 @@
 import argparse
-from typing import Tuple, Optional, Union
+from typing import Optional, Tuple, Union
 
 _ATTRIBUTES = {
     'bold': 1,
@@ -151,7 +151,7 @@ class _ColoredHelpFormatter(argparse.ArgumentDefaultsHelpFormatter):
                         % (
                             'enabled'
                             if action.default
-                            else f'disabled, use "{action.option_strings[0]}" to enable it'
+                            else f'disabled, use "{action.option_strings[0]}" to enable it'  # noqa E501
                         ),
                         attrs=['dark'],
                     )
@@ -166,11 +166,11 @@ class _ColoredHelpFormatter(argparse.ArgumentDefaultsHelpFormatter):
                         'type: %(type)s; default: %(default)s', attrs=['dark']
                     )
         return f'''
-        
+
         {help_string}
-        
+
         {action.help}
-        
+
         '''
 
     def _join_parts(self, part_strings):

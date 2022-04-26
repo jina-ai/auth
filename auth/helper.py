@@ -15,6 +15,7 @@ def is_latest_version(package):
     def _parse_latest_release_version(resp):
         # credit: https://stackoverflow.com/a/34366589
         import json
+
         from packaging.version import parse
 
         latest_release_ver = parse('0')
@@ -28,6 +29,7 @@ def is_latest_version(package):
 
     try:
         from urllib.request import Request, urlopen
+
         import pkg_resources
         from packaging.version import Version
         from rich import print
@@ -46,7 +48,7 @@ def is_latest_version(package):
             if cur_ver < latest_release_ver:
                 print(
                     Panel(
-                        f'You are using [b]{cur_ver}[/b], but [green][b]{latest_release_ver}[/b][/green] is available. '
+                        f'You are using [b]{cur_ver}[/b], but [green][b]{latest_release_ver}[/b][/green] is available. '  # noqa E501
                         f'You may upgrade via [b]pip install -U {package}[/b]',
                         title=':new: New version available',
                         width=50,
@@ -61,13 +63,13 @@ def get_logger():
     from rich.logging import RichHandler
 
     logging.basicConfig(
-        level=os.environ.get('JCLOUD_LOGLEVEL'),
+        level=os.environ.get('JINA_AUTH_LOG_LEVEL'),
         format='%(message)s',
         datefmt='[%X]',
         handlers=[RichHandler(rich_tracebacks=True)],
     )
 
-    return logging.getLogger('jcloud')
+    return logging.getLogger('auth')
 
 
 def get_or_reuse_loop():

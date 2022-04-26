@@ -6,7 +6,7 @@ def set_base_parser():
     from auth.parsers.helper import _chf, colored
 
     parser = argparse.ArgumentParser(
-        description=f'Jina auth (v{colored(__version__, "green")}) helps you login in to Jina Ecosystem.',
+        description=f'Jina auth (v{colored(__version__, "green")}) helps you login in to Jina Ecosystem.',  # noqa F501
         formatter_class=_chf,
     )
     parser.add_argument(

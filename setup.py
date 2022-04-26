@@ -10,9 +10,9 @@ try:
     pkg_name = 'jina-auth'
     libinfo_py = path.join('auth', '__init__.py')
     libinfo_content = open(libinfo_py, 'r', encoding='utf8').readlines()
-    version_line = [l.strip() for l in libinfo_content if l.startswith('__version__')][
-        0
-    ]
+    version_line = [
+        line.strip() for line in libinfo_content if line.startswith('__version__')
+    ][0]
     exec(version_line)  # gives __version__
 except FileNotFoundError:
     __version__ = '0.0.0'
@@ -92,7 +92,7 @@ setup(
     project_urls={
         'Documentation': 'https://github.com/jina-ai/auth/',
         'Source': 'https://github.com/jina-ai/auth/',
-        'Tracker': 'https://github.com/jina-ai/jcloud/issues',
+        'Tracker': 'https://github.com/jina-ai/auth/issues',
     },
     keywords='jina auth login logout user',
 )

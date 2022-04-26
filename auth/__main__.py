@@ -1,5 +1,6 @@
 def main():
     import os
+
     from auth.parsers import get_main_parser
 
     args = get_main_parser().parse_args()
@@ -21,6 +22,7 @@ def main():
         getattr(api, args.cli.replace('-', '_'))(args)
     except KeyboardInterrupt:
         pass
+
 
 if __name__ == '__main__':
     main()
