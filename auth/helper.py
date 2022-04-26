@@ -48,7 +48,8 @@ def is_latest_version(package):
             if cur_ver < latest_release_ver:
                 print(
                     Panel(
-                        f'You are using [b]{cur_ver}[/b], but [green][b]{latest_release_ver}[/b][/green] is available. '  # noqa E501
+                        f'You are using [b]{cur_ver}[/b], '
+                        'but [green][b]{latest_release_ver}[/b][/green] is available.'
                         f'You may upgrade via [b]pip install -U {package}[/b]',
                         title=':new: New version available',
                         width=50,
