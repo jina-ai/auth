@@ -43,3 +43,9 @@ def set_token_parser(parent_parser: 'ArgumentParser' = None):
         type=str,
         help='Name of Personal Access Token which you want to delete',
     )
+
+    list_parser = token_parser.add_parser(  # noqa F841
+        'list',
+        description='List all Personal Access Tokens',
+        formatter_class=_chf,
+    )
