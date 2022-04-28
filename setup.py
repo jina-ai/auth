@@ -58,6 +58,8 @@ setup(
             'pytest-custom_exit_code',
             'black==22.3.0',
             'jina',
+            'flake8',
+            'isort',
         ],
     },
     entry_points={
