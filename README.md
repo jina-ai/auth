@@ -4,7 +4,7 @@ Pypi package (jina-auth), provide a CLI to login Jina Eco.
 ## Install
 
 ```shell
-pip install --pre jina-auth
+pip install jina-auth
 ```
 
 ## Core functionality
@@ -51,8 +51,9 @@ jina auth token delete <name of PAT>
 
 ## Release cycle
 
-Each time new commits come into `main` branch, the pre-release procedure will be started.
-It will generate a pre-release in Pypi.
+- Each time new commits come into `main` branch, CD workflow will generate a new release both on GitHub and Pypi.
+- Each time new commits come into `alpha` branch, CD workflow will generate a new pre-release both on GitHub and Pypi.
+
 
 ## Development guide
 
@@ -75,6 +76,6 @@ It will generate a pre-release in Pypi.
 
 ## Join Us
 
-Hubble Python SDK is backed by [Jina AI](https://jina.ai) and licensed under [Apache-2.0](./LICENSE). [We are actively hiring](https://jobs.jina.ai) AI engineers, solution engineers to build the next neural search ecosystem in opensource.
+Jina Auth is backed by [Jina AI](https://jina.ai) and licensed under [Apache-2.0](./LICENSE). [We are actively hiring](https://jobs.jina.ai) AI engineers, solution engineers to build the next neural search ecosystem in opensource.
 
 <!-- end support-pitch -->
