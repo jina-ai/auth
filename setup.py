@@ -1,21 +1,9 @@
 import sys
-from os import path
 
 from setuptools import find_packages, setup
 
 if sys.version_info < (3, 7, 0):
     raise OSError(f'Requires Python >=3.7, but yours is {sys.version}')
-
-try:
-    pkg_name = 'jina-auth'
-    libinfo_py = path.join('auth', '__init__.py')
-    libinfo_content = open(libinfo_py, 'r', encoding='utf8').readlines()
-    version_line = [
-        line.strip() for line in libinfo_content if line.startswith('__version__')
-    ][0]
-    exec(version_line)  # gives __version__
-except FileNotFoundError:
-    __version__ = '0.0.0'
 
 try:
     with open('README.md', encoding='utf8') as fp:
@@ -31,9 +19,8 @@ except FileNotFoundError:
     _install_requires = []
 
 setup(
-    name=pkg_name,
+    name='jina-auth',
     packages=find_packages(),
-    version=__version__,
     include_package_data=True,
     description='A CLI for you to login in to Jina Ecosystem',
     author='Jina AI',
