@@ -39,9 +39,7 @@ def token(args):
         )
 
     if args.operation == 'delete':
-        response = client.delete_personal_access_token(
-            personal_access_token_id=args.name
-        )
+        response = client.delete_personal_access_token(name=args.name)
 
         response.raise_for_status()
 
