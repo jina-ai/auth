@@ -1,9 +1,11 @@
 import argparse
+import importlib.metadata
 
 
 def set_base_parser():
-    from auth import __version__
     from auth.parsers.helper import _chf, colored
+
+    __version__ = importlib.metadata.version("jina-auth")
 
     parser = argparse.ArgumentParser(
         description=f'Jina auth (v{colored(__version__, "green")}) helps you login in to Jina Ecosystem.',  # noqa F501
