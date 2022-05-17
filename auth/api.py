@@ -10,13 +10,7 @@ def logout(args):
 
 
 def token(args):
-    client = None
-    try:
-        client = hubble.Client(max_retries=None, timeout=10)
-    except Exception as e:
-        if isinstance(e, ValueError):
-            print('🚨 Please login first')
-            return
+    client = hubble.Client(max_retries=None)
 
     if args.operation == 'create':
         response = client.create_personal_access_token(
