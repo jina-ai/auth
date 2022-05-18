@@ -1,6 +1,12 @@
 # Jina Auth
 Pypi package (jina-auth), provide a CLI to login Jina Eco.
 
+<p align="center">
+    <a href="https://codecov.io/gh/jina-ai/hubble-client-python">
+        <img src="./.github/static/intro.gif"/>
+    </a>
+</p>
+
 ## Install
 
 ```shell
