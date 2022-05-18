@@ -1,1 +1,1 @@
-jina-hubble-sdk >= 0.2.5
+jina-hubble-sdk >= 0.4.0
