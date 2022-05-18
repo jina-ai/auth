@@ -57,9 +57,27 @@ jina auth token delete <name of PAT>
 
 ## Development guide
 
-### Step 1: Install dependencies with extra requirements
+All of the development scripts are managed by `make`, run `make help` or take a look at `Makefile` to get more detail.
 
-`pip install -e ".[test]"`
+### Generate virtual env
+
+`make env`
+
+### Install pre-commit
+
+`make pre-commit`
+
+### Install dependencies
+
+`make init`
+
+### Lint style
+
+`make style`
+
+### Test
+
+`make test`
 
 <!-- start support-pitch -->
 ## Support
