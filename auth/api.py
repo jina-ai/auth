@@ -2,7 +2,7 @@ import hubble
 
 
 def login(args):
-    hubble.login()
+    hubble.login(prompt='login')
 
 
 def logout(args):
