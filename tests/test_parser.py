@@ -12,12 +12,23 @@ def parser() -> "ArgumentParser":
 @pytest.mark.parametrize(
     'input,expected',
     [
-        (['login'], 'login'),
-        (['logout'], 'logout'),
+        (['login'], ['login', False]),
+        (['login', '-f'], ['login', True]),
     ],
 )
-def test_login_logout(parser: 'ArgumentParser', input, expected):
-    assert parser.parse_args(input).cli == expected
+def test_login(parser: 'ArgumentParser', input, expected):
+    assert parser.parse_args(input).cli == expected[0]
+    assert parser.parse_args(input).force == expected[1]
+
+
+@pytest.mark.parametrize(
+    'input,expected',
+    [
+        (['logout'], ['logout']),
+    ],
+)
+def test_logout(parser: 'ArgumentParser', input, expected):
+    assert parser.parse_args(input).cli == expected[0]
 
 
 @pytest.mark.parametrize(

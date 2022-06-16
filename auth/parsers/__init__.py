@@ -14,10 +14,18 @@ def get_main_parser():
         required=True,
     )
 
-    sp.add_parser(
+    login_parser = sp.add_parser(
         'login',
         description='Login to Jina Ecosystem',
         formatter_class=_chf,
+    )
+
+    login_parser.add_argument(
+        '-f',
+        '--force',
+        action='store_true',
+        default=False,
+        help='Force to login',
     )
 
     sp.add_parser(
