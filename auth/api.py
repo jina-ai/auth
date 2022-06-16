@@ -1,8 +1,39 @@
+import os
+
 import hubble
+from hubble.excepts import AuthenticationFailedError, AuthenticationRequiredError
 
 
 def login(args):
-    hubble.login(prompt='login')
+    client = hubble.Client(max_retries=None)
+
+    from rich.console import Console
+
+    console = Console()
+
+    if args.force:
+        hubble.login(prompt='login')
+        return
+
+    try:
+        resp = client.get_user_info()
+        nickname = resp.json().get('data', {}).get('nickname', '')
+        if nickname:
+            console.print(
+                f'You are already logged in as [b green]{nickname}[/b green].',
+                '',
+                'If you want to login to another account, please do either way:',
+                '- run `jina auth logout` first',
+                '- run `jina auth login -f`',
+                sep=os.linesep,
+            )
+    except Exception as ex:
+        if isinstance(ex, AuthenticationRequiredError) or isinstance(
+            AuthenticationFailedError
+        ):
+            hubble.login(prompt='login')
+        else:
+            raise ex
 
 
 def logout(args):
