@@ -40,7 +40,7 @@ jina auth logout
 #### Create a new PAT
 
 ```shell
-jina auth token <name of PAT> -e <expiration days>
+jina auth token create <name of PAT> -e <expiration days>
 ```
 
 #### List PATs
