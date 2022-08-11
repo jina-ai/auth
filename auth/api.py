@@ -29,7 +29,7 @@ def login(args):
             )
     except Exception as ex:
         if isinstance(ex, AuthenticationRequiredError) or isinstance(
-                AuthenticationFailedError
+            AuthenticationFailedError
         ):
             hubble.login(prompt='login')
         else:
