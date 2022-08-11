@@ -1,2 +1,1 @@
-jina-hubble-sdk >= 0.7.0
-importlib-metadata
+jina-hubble-sdk>=0.9.2
